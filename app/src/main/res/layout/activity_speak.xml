@@ -17,6 +17,7 @@
             android:layout_width="192dp"
             android:layout_height="match_parent"
             android:text="猜猜\n我是誰?"
+            android:textColor="#FFBB00"
             android:textSize="50sp" />
 
         <ImageView
@@ -36,12 +37,16 @@
             android:id="@+id/sp_bt2"
             android:layout_width="191dp"
             android:layout_height="73dp"
+            android:textSize="30sp"
+            android:textColor="#FF0000"
             android:text="答案" />
 
         <Button
             android:id="@+id/sp_bt1"
             android:layout_width="match_parent"
             android:layout_height="71dp"
+            android:textSize="30sp"
+            android:textColor="#0000FF"
             android:text="下一個" />
     </LinearLayout>
 

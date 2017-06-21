@@ -24,16 +24,41 @@
                 android:weightSum="1">
 
                 <ImageButton
+                    android:id="@+id/listen_two"
+                    android:layout_width="117dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.19"
+                    app:srcCompat="@drawable/gu" />
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="吉他"
+                    android:textColor="#FF0000"
+                    android:textSize="25sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:weightSum="1">
+
+                <ImageButton
                     android:id="@+id/listen_one"
                     android:layout_width="117dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.16"
+                    android:layout_weight="0.19"
                     app:srcCompat="@drawable/s_1" />
 
                 <Button
                     android:id="@+id/button3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="#FF0000"
+                    android:textSize="25sp"
                     android:text="古箏" />
             </LinearLayout>
 
@@ -41,7 +66,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:weightSum="1">
 
                 <ImageButton
                     android:id="@+id/listen_paino"
@@ -52,6 +78,8 @@
                 <Button
                     android:id="@+id/button4"
                     android:layout_width="match_parent"
+                    android:textColor="#FF0000"
+                    android:textSize="25sp"
                     android:layout_height="wrap_content"
                     android:text="鋼琴" />
             </LinearLayout>
@@ -68,11 +96,13 @@
                     android:layout_width="117dp"
                     android:layout_height="wrap_content"
                     app:srcCompat="@drawable/violin"
-                    android:layout_weight="0.16" />
+                    android:layout_weight="0.18" />
 
                 <Button
                     android:id="@+id/button5"
+                    android:textColor="#FF0000"
                     android:layout_width="match_parent"
+                    android:textSize="25sp"
                     android:layout_height="wrap_content"
                     android:text="小提琴" />
 
@@ -95,6 +125,8 @@
                     android:id="@+id/button6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="#FF0000"
+                    android:textSize="25sp"
                     android:text="直笛" />
             </LinearLayout>
 
@@ -113,7 +145,9 @@
                 <Button
                     android:id="@+id/button7"
                     android:layout_width="match_parent"
+                    android:textColor="#FF0000"
                     android:layout_height="wrap_content"
+                    android:textSize="25sp"
                     android:text="低音號" />
             </LinearLayout>
 
@@ -133,6 +167,8 @@
                     android:id="@+id/button8"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="#FF0000"
+                    android:textSize="25sp"
                     android:text="陶笛" />
             </LinearLayout>
 

@@ -10,14 +10,26 @@ import android.widget.ImageButton;
 
 public class listen extends AppCompatActivity {
 
-    Button btn4,btn5,btn6,btn7,btn8,btn3;
+    Button btn4,btn5,btn6,btn7,btn8,btn3,btn2;
     MediaPlayer mediaPlayer;
-    ImageButton listen_paino,listen_vocal,listen_linedi,listen_shortvoice,listen_gree,listen_one;
+    ImageButton listen_paino,listen_vocal,listen_linedi,listen_shortvoice,listen_gree,listen_one,listen_gu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listen);
+
+        btn2=(Button) findViewById(R.id.button2);
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder al = new AlertDialog.Builder(listen.this);
+                al.setTitle("說明");
+                al.setMessage("彈撥樂器。有往往一六條弦，形狀與提琴相似。吉他在流行音樂、搖滾音樂、藍調、民歌、佛朗明哥中，" +
+                        "常被視為主要樂器。而在古典音樂的領域裡，吉他常以獨奏或二重奏的型式演出；在室內樂和管弦樂中，吉他亦扮演著相當程度的陪襯角色。");
+                al.show();
+            }
+        });
 
         btn3=(Button) findViewById(R.id.button3);
         btn3.setOnClickListener(new View.OnClickListener() {
@@ -86,6 +98,15 @@ public class listen extends AppCompatActivity {
                 al.setTitle("說明");
                 al.setMessage("吹管樂器。陶笛外形呈壺狀而非長管狀，屬球形的閉管樂器。而他的雛型曾在不同文化中出現。");
                 al.show();
+            }
+        });
+
+        listen_gu = (ImageButton) findViewById(R.id.listen_two);
+        listen_gu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mediaPlayer = MediaPlayer.create(listen.this, R.raw.gu);
+                mediaPlayer.start();
             }
         });
 
