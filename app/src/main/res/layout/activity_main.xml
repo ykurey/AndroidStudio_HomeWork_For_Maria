@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="top"
+    tools:context="com.example.user.maliyi.MainActivity"
+    android:weightSum="1">
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.87"
+        android:gravity="center"
+        android:text="聽說讀寫樣樣通"
+        android:textSize="50sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:layout_weight="0.25">
+
+        <Button
+            android:id="@+id/btn1"
+            android:layout_width="30dp"
+            android:textSize="30sp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:text="聽聽看" />
+
+        <Button
+            android:id="@+id/btn2"
+            android:layout_width="30dp"
+            android:textSize="30sp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:text="說說讀讀看" />
+
+    </LinearLayout>
+
+</LinearLayout>

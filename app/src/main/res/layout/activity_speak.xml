@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.user.maliyi.speak">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="178dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="192dp"
+            android:layout_height="match_parent"
+            android:text="猜猜\n我是誰?"
+            android:textSize="50sp" />
+
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="match_parent"
+            android:layout_height="174dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/lion" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="136dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/sp_bt2"
+            android:layout_width="191dp"
+            android:layout_height="73dp"
+            android:text="答案" />
+
+        <Button
+            android:id="@+id/sp_bt1"
+            android:layout_width="match_parent"
+            android:layout_height="71dp"
+            android:text="下一個" />
+    </LinearLayout>
+
+</LinearLayout>
