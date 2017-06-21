@@ -10,14 +10,26 @@ import android.widget.ImageButton;
 
 public class listen extends AppCompatActivity {
 
-    Button btn4,btn5,btn6,btn7,btn8;
+    Button btn4,btn5,btn6,btn7,btn8,btn3;
     MediaPlayer mediaPlayer;
-    ImageButton listen_paino,listen_vocal,listen_linedi,listen_shortvoice,listen_gree;
+    ImageButton listen_paino,listen_vocal,listen_linedi,listen_shortvoice,listen_gree,listen_one;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listen);
+
+        btn3=(Button) findViewById(R.id.button3);
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder al = new AlertDialog.Builder(listen.this);
+                al.setTitle("說明");
+                al.setMessage("又稱箏、秦箏。中國撥弦樂器，音域寬廣，音色清亮，表現力豐富。目前通用古箏弦製是21弦箏。");
+                al.show();
+            }
+        });
+
 
         btn4=(Button) findViewById(R.id.button4);
         btn4.setOnClickListener(new View.OnClickListener() {
@@ -74,6 +86,15 @@ public class listen extends AppCompatActivity {
                 al.setTitle("說明");
                 al.setMessage("吹管樂器。陶笛外形呈壺狀而非長管狀，屬球形的閉管樂器。而他的雛型曾在不同文化中出現。");
                 al.show();
+            }
+        });
+
+        listen_one = (ImageButton) findViewById(R.id.listen_one);
+        listen_one.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mediaPlayer = MediaPlayer.create(listen.this, R.raw.ss_1);
+                mediaPlayer.start();
             }
         });
 
