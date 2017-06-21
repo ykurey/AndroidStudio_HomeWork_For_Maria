@@ -1,23 +1,47 @@
 package com.example.user.maliyi;
 
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.media.MediaPlayer;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-public class listen extends AppCompatActivity {
+import java.util.Random;
+
+public class listen extends AppCompatActivity implements SensorEventListener,GestureDetector.OnGestureListener,View.OnTouchListener{
 
     Button btn4,btn5,btn6,btn7,btn8,btn3,btn2;
     MediaPlayer mediaPlayer;
     ImageButton listen_paino,listen_vocal,listen_linedi,listen_shortvoice,listen_gree,listen_one,listen_gu;
+    String spk[]={"吉他","鋼琴","小提琴","古箏","低音號","陶笛","直笛"};
+    int rnd;
+
+    GestureDetector gd;
+
+    SensorManager sm;
+    Sensor sr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listen);
+
+        gd = new GestureDetector(this, this);
+
+        sm = (SensorManager) getSystemService(SENSOR_SERVICE);
+        sr = sm.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+
+        Random x = new Random();
+        rnd = x.nextInt(7);
+
 
         btn2=(Button) findViewById(R.id.button2);
         btn2.setOnClickListener(new View.OnClickListener() {
@@ -164,5 +188,70 @@ public class listen extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public void onSensorChanged(SensorEvent event) {
+        float x, y, z;
+        x = event.values[0];
+        y = event.values[1];
+        z = event.values[2];
+
+        if (Math.abs(x)<1 && Math.abs(y)<1 && z<-9) { //朝下平放
+            Random u = new Random();
+            rnd = u.nextInt(7);
+            AlertDialog.Builder al = new AlertDialog.Builder(listen.this);
+            al.setTitle("推薦你聽這個");
+            al.setMessage(spk[rnd]);
+            al.show();
+        }
+        else if (Math.abs(x) + Math.abs(y) + Math.abs(z) > 32){ //手機搖晃
+            Random u = new Random();
+            rnd = u.nextInt(7);
+            AlertDialog.Builder al = new AlertDialog.Builder(listen.this);
+            al.setTitle("推薦你聽這個");
+            al.setMessage(spk[rnd]);
+            al.show();
+        }
+    }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int accuracy) {
+
+    }
+
+    @Override
+    public boolean onDown(MotionEvent e) {
+        return false;
+    }
+
+    @Override
+    public void onShowPress(MotionEvent e) {
+
+    }
+
+    @Override
+    public boolean onSingleTapUp(MotionEvent e) {
+        return false;
+    }
+
+    @Override
+    public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
+        return false;
+    }
+
+    @Override
+    public void onLongPress(MotionEvent e) {
+
+    }
+
+    @Override
+    public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+        return false;
+    }
+
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+        return false;
     }
 }
