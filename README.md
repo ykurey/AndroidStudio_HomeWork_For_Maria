@@ -1,5 +1,4 @@
-# maliyi
-## Android Studio 期末作業
+# Android Studio 期末作業
 
 * 初衷：以瑪麗雅基金會當作題目，利用App解決一些問題。
 * 題目：自行發想
